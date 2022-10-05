@@ -12,7 +12,7 @@ The Grade Book Program is a simple application that takes a simple text data and
       <td>60%</td>
     </tr>
      <tr>
-      <td>Exam</td>
+      <td>Homework</td>
       <td>40%</td>
     </tr>
   </tbody>
