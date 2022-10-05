@@ -51,7 +51,7 @@ try{
           $position = array_search($minVal, $val["homeworks"]);
           unset($val["homeworks"][$position]);
         }
-        
+
         foreach($val["homeworks"] as $testGrade){
           $allgrades[] = Grade::insert_grade($student->id, $val["quarter"], $val["year"], "Homework", $testGrade, 1);
         }
@@ -59,6 +59,9 @@ try{
     }
 
     echo "<script>alert('Grades Submitted!');</script>";
+  }
+  else{
+    throw new Exception("Empty input.");
   }
 }catch(Exception $e){
   $message = $e->getMessage();
