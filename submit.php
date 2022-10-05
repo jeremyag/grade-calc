@@ -46,9 +46,12 @@ try{
       }
 
       if($val["homeworks"]){
-        $minVal = min($val["homeworks"]);
-        $position = array_search($minVal, $val["homeworks"]);
-        unset($val["homeworks"][$position]);
+        if(count($val["homeworks"]) > 1){
+          $minVal = min($val["homeworks"]);
+          $position = array_search($minVal, $val["homeworks"]);
+          unset($val["homeworks"][$position]);
+        }
+        
         foreach($val["homeworks"] as $testGrade){
           $allgrades[] = Grade::insert_grade($student->id, $val["quarter"], $val["year"], "Homework", $testGrade, 1);
         }
