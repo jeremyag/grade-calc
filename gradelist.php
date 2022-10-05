@@ -4,6 +4,8 @@
   $gradeSummary = Grade::get_all_summary();
 ?>
 
+<?php require_once("load_env.php"); ?>
+
 <?php if($gradeSummary) { ?>
 <div class="card height-expand">
     <div class="card-header">

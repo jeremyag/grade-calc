@@ -62,6 +62,5 @@ try{
   echo "<script>alert('$message');</script>";
 }
 
-
-  echo "<script>window.location.href = 'http://localhost/grades-calc';</script>";
+  echo "<script>window.location.href = 'index.php';</script>";
 ?>

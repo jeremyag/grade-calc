@@ -13,6 +13,10 @@ class ParseGrade {
       
       // Get Quarter and Year
       $firstRow = explode(",", $values[0]);
+      if(count($firstRow) < 2){
+        throw new Exception("Invalid Quarter or Year.");
+      }
+      
       $quarter = trim($firstRow[0]);
       $year = trim($firstRow[1]);
 
