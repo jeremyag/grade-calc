@@ -52,15 +52,14 @@ Suzy Johnson H 65 72 78 80 82 74 76 0 85 75 76 T 74 79 70 83 78</textarea>
                             Choose File
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="submit.php" method="post" enctype="multipart/form-data">
                                 <label>Input txt file:</label>
                                 <a class="btn btn-secondary" href="sample.txt" target="_blank" download>Download Sample Txt</a>
                                 <br><br>
-                                <input type="file" class="form-control"></textarea>
+                                <input type="file" name="uploadedfile" class="form-control"></textarea>
                                 <br>
                                 <div class="text-end">
-                                   
-                                    <button type="button" class="btn btn-secondary">Submit</button>
+                                    <button type="submit" name="file_upload" class="btn btn-secondary">Submit</button>
                                 </div>
                             </form>
                         </div>

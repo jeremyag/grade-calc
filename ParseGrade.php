@@ -38,6 +38,10 @@ class ParseGrade {
     
         $homeworks = [];
         $tests = [];
+
+        if(count($current_row) <= 3){
+          throw new Exception("Must contain at least 1 grade for student on row $rowNum");
+        }
         
         $current_type = "";
         for($x = 2; $x < count($current_row); $x++){
@@ -54,7 +58,7 @@ class ParseGrade {
                 break;
               default:
                 $current_type = "";
-                throw new Exception("Invalid grade type. Can only be 'H' or 'T'. Found '$current_word' instead on row {$rowNum} position {$positionNum}.");
+                throw new Exception("Invalid grade type. Can only be \'H\' or \'T\'. Found \'$current_word\' instead on row {$rowNum} position {$positionNum}.");
             }
             continue;
           }
@@ -71,6 +75,10 @@ class ParseGrade {
           }else{
             throw new Exception("Invalid value on row $rowNum position $positionNum. Can only be an alpha or numeric value. Found '$current_word' instead.");
           }
+        }
+
+        if(count($tests) <= 0 && count($homeworks) <= 0){
+          throw new Exception("Must contain at least 1 grade for student on row $rowNum");
         }
     
         $extraction[] = [
